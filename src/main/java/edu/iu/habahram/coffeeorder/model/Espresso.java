@@ -4,7 +4,7 @@ public class Espresso extends Beverage{
 
     @Override
     public String getDescription() {
-        return "espresso";
+        return "Espresso";
     }
     @Override
     public float cost() {

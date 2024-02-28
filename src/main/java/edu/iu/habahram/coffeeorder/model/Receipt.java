@@ -5,7 +5,7 @@ public record Receipt(String description, float cost) {
     static int id;
 
     public void setId(int id){
-        Receipt.id = id;
+        this.id = id;
     }
 
     public int getId(){

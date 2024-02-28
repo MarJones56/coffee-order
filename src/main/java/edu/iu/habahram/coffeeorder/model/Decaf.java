@@ -4,7 +4,7 @@ public class Decaf extends Beverage{
 
     @Override
     public String getDescription() {
-        return "decaf";
+        return "Decaf";
     }
     @Override
     public float cost() {

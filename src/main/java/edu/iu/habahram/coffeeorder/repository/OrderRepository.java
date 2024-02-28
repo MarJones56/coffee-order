@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.text.DecimalFormat;
 
 @Repository
 public class OrderRepository {
@@ -23,7 +24,7 @@ public class OrderRepository {
                 StandardOpenOption.APPEND);
     }
 
-    public Receipt add(OrderData order) throws Exception {
+    public static Receipt add(OrderData order) throws Exception {
         Beverage beverage = null;
         switch (order.beverage().toLowerCase()) {
             case "dark roast":
@@ -60,10 +61,15 @@ public class OrderRepository {
                     throw new Exception("Condiment type '%s' is not valid".formatted(condiment));
             }
         }
-        Receipt receipt = new Receipt(beverage.getDescription(), beverage.cost());
+        // price comes out funky, so it needs to be rounded.
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String roundedNumber = decimalFormat.format(beverage.cost());
+        float roundedFloat = Float.parseFloat(roundedNumber);
+
+        Receipt receipt = new Receipt(beverage.getDescription(), roundedFloat);
         int id = (int)(Math.random() * ((1000000 - 1) + 1));
         receipt.setId(id);
-        String stringReceipt = id + "," + beverage.cost() + "," + beverage.getDescription();
+        String stringReceipt = id + "," + roundedFloat + "," + beverage.getDescription();
 
         Path path = Paths.get(DATABASE_NAME);
         appendToFile(path, stringReceipt + NEW_LINE);
