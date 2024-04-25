@@ -70,9 +70,6 @@ public class OrderFileRepository {
         int id = (int)(Math.random() * ((1000000 - 1) + 1));
         receipt.setId(id);
         String stringReceipt = id + "," + roundedFloat + "," + beverage.getDescription();
-
-        Path path = Paths.get(DATABASE_NAME);
-        appendToFile(path, stringReceipt + NEW_LINE);
         return receipt;
     }
 }

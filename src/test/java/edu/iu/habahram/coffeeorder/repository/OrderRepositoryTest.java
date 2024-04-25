@@ -31,8 +31,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "milk", "milk", "milk"));
         OrderData order = new OrderData("dark roast", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(3.59F, receipt.cost());
-        assertEquals("Dark roast, Milk, Milk, Milk, Milk", receipt.description());
+        assertEquals(3.59F, receipt.getPrice());
+        assertEquals("Dark roast, Milk, Milk, Milk, Milk", receipt.getDescription());
     }
 
     @Test
@@ -40,8 +40,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("soy", "whip"));
         OrderData order = new OrderData("dark roast", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.51F, receipt.cost());
-        assertEquals("Dark roast, Soy, Whip", receipt.description());
+        assertEquals(2.51F, receipt.getPrice());
+        assertEquals("Dark roast, Soy, Whip", receipt.getDescription());
     }
 
     @Test
@@ -49,8 +49,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "mocha", "whip", "soy"));
         OrderData order = new OrderData("dark roast", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(3.21F, receipt.cost());
-        assertEquals("Dark roast, Milk, Mocha, Whip, Soy", receipt.description());
+        assertEquals(3.21F, receipt.getPrice());
+        assertEquals("Dark roast, Milk, Mocha, Whip, Soy", receipt.getDescription());
     }
 
     @Test
@@ -58,8 +58,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("mocha", "soy", "mocha"));
         OrderData order = new OrderData("dark roast", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.86F, receipt.cost());
-        assertEquals("Dark roast, Mocha, Soy, Mocha", receipt.description());
+        assertEquals(2.86F, receipt.getPrice());
+        assertEquals("Dark roast, Mocha, Soy, Mocha", receipt.getDescription());
     }
 
     @Test
@@ -67,8 +67,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "milk", "milk", "milk"));
         OrderData order = new OrderData("espresso", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.94F, receipt.cost());
-        assertEquals("Espresso, Milk, Milk, Milk, Milk", receipt.description());
+        assertEquals(2.94F, receipt.getPrice());
+        assertEquals("Espresso, Milk, Milk, Milk, Milk", receipt.getDescription());
     }
 
     @Test
@@ -76,8 +76,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("soy", "whip"));
         OrderData order = new OrderData("espresso", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(1.86F, receipt.cost());
-        assertEquals("Espresso, Soy, Whip", receipt.description());
+        assertEquals(1.86F, receipt.getPrice());
+        assertEquals("Espresso, Soy, Whip", receipt.getDescription());
     }
 
     @Test
@@ -85,8 +85,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "mocha", "whip", "soy"));
         OrderData order = new OrderData("espresso", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.56F, receipt.cost());
-        assertEquals("Espresso, Milk, Mocha, Whip, Soy", receipt.description());
+        assertEquals(2.56F, receipt.getPrice());
+        assertEquals("Espresso, Milk, Mocha, Whip, Soy", receipt.getDescription());
     }
 
     @Test
@@ -94,8 +94,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("mocha", "soy", "mocha"));
         OrderData order = new OrderData("espresso", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.21F, receipt.cost());
-        assertEquals("Espresso, Mocha, Soy, Mocha", receipt.description());
+        assertEquals(2.21F, receipt.getPrice());
+        assertEquals("Espresso, Mocha, Soy, Mocha", receipt.getDescription());
     }
 
     @Test
@@ -103,8 +103,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "milk", "milk", "milk"));
         OrderData order = new OrderData("house blend", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(3.25F, receipt.cost());
-        assertEquals("House Blend, Milk, Milk, Milk, Milk", receipt.description());
+        assertEquals(3.25F, receipt.getPrice());
+        assertEquals("House Blend, Milk, Milk, Milk, Milk", receipt.getDescription());
     }
 
     @Test
@@ -112,8 +112,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("soy", "whip"));
         OrderData order = new OrderData("house blend", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.17F, receipt.cost());
-        assertEquals("House Blend, Soy, Whip", receipt.description());
+        assertEquals(2.17F, receipt.getPrice());
+        assertEquals("House Blend, Soy, Whip", receipt.getDescription());
     }
 
     @Test
@@ -121,8 +121,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "mocha", "whip", "soy"));
         OrderData order = new OrderData("house blend", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.87F, receipt.cost());
-        assertEquals("House Blend, Milk, Mocha, Whip, Soy", receipt.description());
+        assertEquals(2.87F, receipt.getPrice());
+        assertEquals("House Blend, Milk, Mocha, Whip, Soy", receipt.getDescription());
     }
 
     @Test
@@ -130,8 +130,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("mocha", "soy", "mocha"));
         OrderData order = new OrderData("house blend", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.52F, receipt.cost());
-        assertEquals("House Blend, Mocha, Soy, Mocha", receipt.description());
+        assertEquals(2.52F, receipt.getPrice());
+        assertEquals("House Blend, Mocha, Soy, Mocha", receipt.getDescription());
     }
 
     @Test
@@ -139,8 +139,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "milk", "milk", "milk"));
         OrderData order = new OrderData("decaf", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.88F, receipt.cost());
-        assertEquals("Decaf, Milk, Milk, Milk, Milk", receipt.description());
+        assertEquals(2.88F, receipt.getPrice());
+        assertEquals("Decaf, Milk, Milk, Milk, Milk", receipt.getDescription());
     }
 
     @Test
@@ -148,8 +148,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("soy", "whip"));
         OrderData order = new OrderData("decaf", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(1.80F, receipt.cost());
-        assertEquals("Decaf, Soy, Whip", receipt.description());
+        assertEquals(1.80F, receipt.getPrice());
+        assertEquals("Decaf, Soy, Whip", receipt.getDescription());
     }
 
     @Test
@@ -157,8 +157,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("milk", "mocha", "whip", "soy"));
         OrderData order = new OrderData("decaf", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.50F, receipt.cost());
-        assertEquals("Decaf, Milk, Mocha, Whip, Soy", receipt.description());
+        assertEquals(2.50F, receipt.getPrice());
+        assertEquals("Decaf, Milk, Mocha, Whip, Soy", receipt.getDescription());
     }
 
     @Test
@@ -166,8 +166,8 @@ class OrderRepositoryTest {
         List<String> condiments = (Arrays.asList("mocha", "soy", "mocha"));
         OrderData order = new OrderData("decaf", condiments);
         Receipt receipt = OrderFileRepository.add(order);
-        assertEquals(2.15F, receipt.cost());
-        assertEquals("Decaf, Mocha, Soy, Mocha", receipt.description());
+        assertEquals(2.15F, receipt.getPrice());
+        assertEquals("Decaf, Mocha, Soy, Mocha", receipt.getDescription());
     }
 
 }
